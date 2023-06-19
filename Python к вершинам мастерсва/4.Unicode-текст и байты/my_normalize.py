@@ -1,6 +1,6 @@
 from unicodedata import normalize, name
 
-s1 ='café'
+s1 = 'café'
 s2 = 'cafe\N{COMBINING ACUTE ACCENT}'
 # Unicode-эскейп-последовательностью в Python,
 # которая используется для представления символа в кодировке Unicode.
