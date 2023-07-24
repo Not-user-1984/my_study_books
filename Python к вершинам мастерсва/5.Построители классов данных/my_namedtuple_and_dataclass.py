@@ -1,6 +1,6 @@
-from collections import namedtuple
 import typing
-from dataclasses import dataclass
+from collections import namedtuple
+from dataclasses import dataclass, field
 
 
 class Coordinate:
@@ -71,7 +71,16 @@ class My_Coordinate(typing.NamedTuple):
 d = My_Coordinate(21.21, 212.121)
 
 print(d)
-
+# Преимущества использования dataclass :
+# Автоматическое создание общих методов: Декоратор dataclass автоматически создает общие методы,
+# такие как __init__, __repr__ и методы сравнения (__eq__, __ne__), на основе определенных атрибутов.
+# Это уменьшает объем повторяющегося кода и делает реализацию класса более чистой и краткой.
+# Неизменяемые экземпляры: Установка параметра frozen=True делает экземпляры класса неизменяемыми.
+# Это гарантирует, что атрибуты не могут быть случайно изменены, обеспечивая целостность данных и предотвращая ошибки, связанные с непреднамеренными изменениями.
+# Читаемость и поддержка кода: Использование dataclass улучшает читаемость и поддерживаемость кода,
+# четко указывая намерение класса и его атрибутов. Он также предоставляет последовательный и стандартизированный способ определения классов с ориентацией на данные.
+# В отличие от предыдущих реализаций класса Coordinate, использующих обычный класс, namedtuple и NamedTuple, требуется ручная реализация методов,
+# и в них отсутствует неизменяемость, предоставляемая dataclass.
 
 @dataclass(frozen=True)
 class My_dataclass_Coordinate:
@@ -85,6 +94,16 @@ class My_dataclass_Coordinate:
 
 
 d = My_dataclass_Coordinate(21.21, 21211.121)
-d.lat = 2312.12
+# d.lat = 2312.12
 print(d)
 
+# У классов, построенных с помощью typing.NamedTuple
+# и @dataclass, имеется атрибут __annotations__,
+# в котором хранятся аннотации типов полей.
+# Однако читать __annotations__ напрямую не реко- мендуется.
+# Лучше получать эту информацию от метода inspect. get_annotations(MyClass)
+
+import inspect
+
+print(inspect.get_annotations(My_dataclass_Coordinate))
+print(typing.get_type_hints(My_dataclass_Coordinate))
