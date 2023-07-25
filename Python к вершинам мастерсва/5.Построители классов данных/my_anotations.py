@@ -18,7 +18,6 @@ print(DemoNtClass.a)
 print(DemoNtClass.b)
 print(DemoNtClass.c)
 
-
 # Атрибуты __annotations__ и __doc__ не таят никаких сюрпризов.
 #  Но атрибута с именем a в классе DemoDataClass нет – в отличие от DemoNTClass 
 # из примера , в котором имеется дескриптор для получения a из экземпляров в виде атрибутов,

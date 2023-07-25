@@ -1,6 +1,6 @@
 import typing
 from collections import namedtuple
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 class Coordinate:
