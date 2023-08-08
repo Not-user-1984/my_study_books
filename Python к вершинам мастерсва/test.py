@@ -1,46 +1,35 @@
-a = '444444'
-b = '999999'
+# import random
+
+# def bubble_sort(nums):
+#     swapped = True
+#     while swapped:
+#         swapped = False
+#         for i in range(len(nums) - 1):
+
+#             if nums[i] > nums[i + 1]:
+#                 nums[i], nums[i + 1] = nums[i + 1], nums[i]
+#                 swapped = True
 
 
-# Добавление нулей в начало строк, чтобы их длины были одинаковыми
-maxlen = max(len(a), len(b))
-a = a.zfill(maxlen)
-b = b.zfill(maxlen)
+# random_list_of_nums = [random.randint(0,100) for _ in range(100)]
+# print(random_list_of_nums)
+# bubble_sort(random_list_of_nums)
+# print(random_list_of_nums)
 
-result = ''  # Результат будет сохранен здесь
-carry = 0   # Переменная для переноса
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        print(i)
+        # Находим индекс минимального элемента в неотсортированной части массива
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
 
-for i in range(maxlen-1, -1, -1):
-    r = carry
-    r += int(a[i])
-    r += int(b[i])
-    carry = 1 if r > 9 else 0
-    result = str(r % 10) + result
+        # Меняем минимальный элемент с первым элементом в неотсортированной части
+        arr[i], arr[min_index] = arr[min_index], arr[i]
 
-
-if carry > 0:
-    result = str(carry) + result
-
-print(result)
-
-class BiGBoss:
-    def __init__(self, my_list):
-        self.my_list = my_list
-
-    def genfloat(self):
-        return [float(x) for x in self.my_list]
-
-list_comp = [x for x in range(1000) if x % 2 == 0]
-
-list_lamda = list(map(lambda x: str(x), list_comp))
-big_boss = BiGBoss(list_lamda)
-print(list_comp)
-print(big_boss.my_list)
-print(big_boss.genfloat())
-my_set = set(list_lamda)
-
-# for _ in range(len(my_set)):
-#     print(my_set.pop())
-
-my_tuple = tuple(list_comp)
-print(my_tuple[2])
+# Пример использования
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print("Отсортированный массив:", arr)

@@ -46,9 +46,9 @@ print(moscow == moscow_1)
 #  статической проверки типов, таких как Mypy
 Coordinate_my_namedtuple_typing = typing.NamedTuple(
     'Coordinate_my_namedtuple',
-    lat= float,
-    lan = float
-    )
+    lat=float,
+    lan=float
+)
 
 
 moscow = Coordinate_my_namedtuple_typing(21.21, 1212.121)

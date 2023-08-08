@@ -20,10 +20,11 @@ class DemoDataClass:
     b: float = 1.1
     c = 'spam'
 
+
 @dataclass
 class ClubMemder:
     name: str
     guests: list[str] = field(default_factory=list)
-    # Новый синтаксис list[str] – это параметризованный обобщенный тип: на- чиная с версии Python 3.9
-    # встроенный тип list допускает задание типа элемен- тов списка в квадратных скобках
+    # Новый синтаксис list[str] – это параметризованный обобщенный тип: начиная с версии Python 3.9
+    # встроенный тип list допускает задание типа элементов списка в квадратных скобках
     athlete: bool = field(default=False, repr=False)
