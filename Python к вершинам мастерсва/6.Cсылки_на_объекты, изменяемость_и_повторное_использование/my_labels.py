@@ -5,7 +5,7 @@ class Gizmo:
 #  выполняеться правая часть сначала,
 # где создаеться обьект.
 x = Gizmo()
-# y = Gizmo() * 10
+# y = Gizmo() 10
 
 
 charles = {'name': 'Charles L. Dodgson', 'born': 1832}
