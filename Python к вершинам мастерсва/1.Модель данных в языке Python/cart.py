@@ -27,6 +27,8 @@ class FrechDeck:
 
 
 deck = FrechDeck()
+
+
 print(*[_ for _ in deck ][:3],sep="\n")
 
 if __name__ == "__main__":

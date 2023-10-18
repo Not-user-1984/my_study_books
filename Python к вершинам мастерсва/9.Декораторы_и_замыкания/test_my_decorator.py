@@ -1,13 +1,14 @@
 import time
-from  my_decorator import clock
+# from  my_decorator import clock
+from my_dacorator_class import clock
 
 
-@clock
+@clock()
 def shooze(seconds):
     time.sleep(seconds)
 
 
-@clock
+@clock()
 def factorial(n):
     return 1 if n < 2 else n * factorial(n-1)
 
