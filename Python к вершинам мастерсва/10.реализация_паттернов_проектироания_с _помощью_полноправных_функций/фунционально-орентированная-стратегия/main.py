@@ -1,7 +1,8 @@
 from decimal import Decimal
-from best_promo import best_promo
+
 import objects
 import promo
+from best_promo import best_promo
 
 
 def test_func_strategy():
@@ -11,7 +12,7 @@ def test_func_strategy():
     cart1 = [
         objects.LineItem('Banana', 4, Decimal('0.5')),
         objects.LineItem('Apple', 10, Decimal('1.5')),
-        objects.LineItem('Orange', 6, Decimal('1.2')),
+        objects.LineItem('Orange', 60, Decimal('1.2')),
     ]
 
     cart2 = [
@@ -21,7 +22,7 @@ def test_func_strategy():
     ]
 
     order1 = objects.Order(joe, cart1, promo.fidelity_promo)
-    order2 = objects.Order(ann, cart1, promo.fidelity_promo)
+    order2 = objects.Order(ann, cart1, promo.large_order_promo)
     order3 = objects.Order(joe, cart2, promo.bulk_item_promo)
     order4 = objects.Order(joe, cart2, promo.large_order_promo)
 
@@ -34,6 +35,7 @@ def test_func_strategy():
     print("Best promo for order2:", best_promo(order2))
     print("Best promo for order3:", best_promo(order3))
     print("Best promo for order4:", best_promo(order4))
+
 
 if __name__ == '__main__':
     test_func_strategy()
