@@ -4,6 +4,7 @@ from vector2b import Vector2b
 
 v1 = Vector2b(3.0, 4.0)
 x, y = v1
+cord = {}
 vcopy = copy.copy(v1)
 octets = bytes(v1)
 vscopy = Vector2b.frombytes(bytes(v1))
@@ -17,6 +18,6 @@ if __name__ == '__main__':
     print(abs(v1))
     print(bool(v1), bool(Vector2b(0, 0)))
     print(vscopy == v1)
-    print(format(v1))
-    print(format(v1, '3e'))
+
+    print(format(Vector2b(5, 1), '3e'))
     print(format(Vector2b(1, 1), 'p'))
