@@ -1,6 +1,7 @@
 import functools
 import time
 from typing import Callable, Any
+import asyncio
 
 
 def async_timed():
@@ -17,3 +18,11 @@ def async_timed():
                 print(f'{func} завершилась за {total:.4f} c')
         return wrapped
     return wrapper
+
+
+@async_timed()
+async def delay(delay_second: int) -> int:
+    print(f'зысыпаю на {delay_second} c')
+    await asyncio.sleep(delay_second)
+    print(f'сон в течение {delay_second} с')
+    return delay_second
