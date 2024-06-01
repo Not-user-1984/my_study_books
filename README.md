@@ -11,3 +11,4 @@
 2. [Asyncio и конкурентное программирование на Python](/Asyncio_и_конкурентное_програмирование_на_Python/)
    - Автор: Мэтью Фаулер
    - Дата выхода: 2022
+https://github.com/Not-user-1984/my_study_books/tree/9842cb7c3877256247c9140b8e35e836dcb1f644/Python%20%D0%BA%20%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B0%D0%BC%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%B2%D0%B0
